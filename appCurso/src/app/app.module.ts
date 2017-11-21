@@ -5,11 +5,13 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { FechaActualComponent } from './fechaactual/fechaactual.component';
+import { CopyrightComponent } from './copyright/copyright.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    FechaActualComponent
+    FechaActualComponent,
+    CopyrightComponent
   ],
   imports: [
     BrowserModule,

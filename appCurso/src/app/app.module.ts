@@ -10,6 +10,7 @@ import { ViewmodeloComponent } from './viewmodelo/viewmodelo.component';
 import { EjmetodoComponent } from './ejmetodo/ejmetodo.component';
 import { EjpropertybindingComponent } from './ejpropertybinding/ejpropertybinding.component';
 import { EjeventbindingComponent } from './ejeventbinding/ejeventbinding.component';
+import { Ej2waybindingComponent } from './ej2waybinding/ej2waybinding.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EjeventbindingComponent } from './ejeventbinding/ejeventbinding.compone
     ViewmodeloComponent,
     EjmetodoComponent,
     EjpropertybindingComponent,
-    EjeventbindingComponent
+    EjeventbindingComponent,
+    Ej2waybindingComponent
   ],
   imports: [
     BrowserModule,

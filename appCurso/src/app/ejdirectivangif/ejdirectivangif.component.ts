@@ -7,11 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EjdirectivangifComponent implements OnInit {
 
-  nombre: string;
+  capital: string;
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  setResultado() {
+    return this.capital === 'Lima' ? true : false;
+  }
 }

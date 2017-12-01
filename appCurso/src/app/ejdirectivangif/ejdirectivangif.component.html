@@ -1,16 +1,13 @@
 <div class="container">
-  <label>Nombre y Apellidos</label>
-  <input type="text"
-         class="form-control"
-         placeholder="Complete su nombre y apellidos"
-         [(ngModel)]="nombre">
-  <button type="submit" class="btn btn-primary"
-          *ngIf="nombre; else desactivado">
-    Enviar
-  </button>
-  <ng-template #desactivado>
-    <button type="submit" class="btn btn-primary" disabled>
-      Enviar
-    </button>
+  <h3>¿Cual es la capital de Peru?</h3>
+  <input type="text" class="form-control" [(ngModel)]="capital">
+  <p *ngIf="!capital; else correcto">Complete la pregunta </p>
+  
+  <ng-template #correcto>
+    <h4 *ngIf="setResultado(); else incorrecto">¡Correcto!</h4>
+  </ng-template>
+  
+  <ng-template #incorrecto>
+    <h4>Lo siento, intentelo de nuevo</h4>
   </ng-template>
 </div>

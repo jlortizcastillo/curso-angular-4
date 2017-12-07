@@ -1,5 +1,6 @@
 <h2>Componente padre</h2>
 <div class="padre">
-  <!--<app-hijo [aviso]="valorPadre"></app-hijo>-->
-  <app-hijo *ngFor="let avisop of avisos" [aviso]="avisop"></app-hijo>
+  <app-hijo *ngFor="let avisop of avisos" [aviso]="avisop"
+            (mensajeMarcado)="mostrarMensaje($event)"></app-hijo>
+  <h3 class="text-center">{{ texto }}</h3>
 </div>

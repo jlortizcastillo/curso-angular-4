@@ -10,6 +10,12 @@ export class AddproveeComponent implements OnInit {
 
   @ViewChild('formpro') formpro: NgForm;
   proveedor: any;
+  provincias: string[] = ['Alava', 'Albacete', 'Alicante', 'Almería', 'Asturias',
+                          'Ávila', 'Barcelona', 'Burgos', 'Cáceres', 'Cádiz',
+                          'Cantabria', 'Castellón', 'Ciudad Real', 'La Coruña', 'Cuenca',
+                          'Gerona', 'Granada', 'Guadalajara', 'Guipúzcoa', 'Huelva',
+                          'Islas Baleares', 'Jaén', 'León', 'Lérida', 'Lugo',
+                          'Madrid', 'Málaga', 'Murcia', 'Palencia', 'Las Palmas'];
 
   constructor() {
     this.proveedor = {

@@ -22,4 +22,10 @@ export class PresupuestosService {
                     });
   }
 
+  getPresupuestos() {
+    return this.http.get(this.presURL)
+                    .map(
+                      res => res.json()
+                    );
+  }
 }

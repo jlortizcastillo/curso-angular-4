@@ -49,6 +49,7 @@ export class AddpresComponent implements OnInit {
                             .subscribe(newpres => {
                               console.log(newpres);
                             });
+    this.presupuestoForm.reset();
   }
 
   savePresupuesto() {

@@ -1,8 +1,10 @@
 <div class="row">
   <div class="col col-md"></div>
   <div class="col-10 col-md-8">
-    <h2>Añadir nuevo presupuesto</h2>
-    <a class="btn btn-primary float-md-right" routerLink="/presupuestos">Regresar al listado</a>
+    <h2>Editar presupuesto</h2>
+    <a class="btn btn-primary float-md-right" routerLink="/presupuestos">
+      Regresar al listado
+    </a>
     <form [formGroup]="presupuestoForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="proveedor">Proveedor</label>
@@ -14,7 +16,8 @@
         <input type="text"
                class="form-control"
                id="proveedor"
-               formControlName="proveedor">
+               formControlName="proveedor"
+               [ngModel]="presupuesto.proveedor">
         <p class="alert alert-danger"
             *ngIf="presupuestoForm.controls.proveedor.invalid &&
                     presupuestoForm.controls.proveedor.touched">
@@ -26,27 +29,31 @@
         <input type="date"
                class="form-control"
                id="fecha"
-               formControlName="fecha">
+               formControlName="fecha"
+               [ngModel]="presupuesto.fecha">
       </div>
       <div class="form-group">
         <label for="concepto">Concepto</label>
         <input type="text"
                class="form-control"
                id="concepto"
-               formControlName="concepto">
+               formControlName="concepto"
+               [ngModel]="presupuesto.concepto">
       </div>
       <div class="form-group">
         <label for="base">Base Imponible</label>
         <input type="number"
                class="form-control"
                id="base"
-               formControlName="base">
+               formControlName="base"
+               [ngModel]="presupuesto.base">
       </div>
       <div class="form-group">
         <label for="tipo">Tipo de IVA</label>
         <select class="form-control" 
                 id="tipo"
-                formControlName="tipo">
+                formControlName="tipo"
+                [ngModel]="presupuesto.tipo">
           <option value="">Seleccione...</option>
           <option value=0> 0 %</option>
           <option value=0.04> 4 %</option>
@@ -75,7 +82,7 @@
       <button type="submit"
               class="btn btn-primary"
               [disabled]="!presupuestoForm.valid">
-        Añadir Presupuesto
+        Guardar cambios
       </button>
       <a class="btn btn-danger" routerLink="/presupuestos">Cancelar</a>
       <p class="alert alert-danger" *ngIf="!presupuestoForm.valid">Por favor, complete todos los campos obligaotrios</p>
@@ -83,3 +90,4 @@
   </div>
   <div class="col col-md"></div>
 </div>
+

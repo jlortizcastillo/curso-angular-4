@@ -15,6 +15,7 @@ import { PresupuestosService } from './servicios/presupuestos.service';
 import { PresupuestosComponent } from './presupuestos/presupuestos/presupuestos.component';
 import { EditpresComponent } from './presupuestos/editpres/editpres.component';
 import { RegistroComponent } from './autenticacion/registro/registro.component';
+import { AutenticacionService } from './servicios/autenticacion.service';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -48,7 +49,8 @@ const routes: Routes = [
   ],
   providers: [
     ProveedoresService,
-    PresupuestosService
+    PresupuestosService,
+    AutenticacionService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import * as firebase from 'firebase';
 import { Router, ActivatedRoute } from '@angular/router';
-import { error } from 'selenium-webdriver';
 
 @Injectable()
 export class AutenticacionService {
@@ -31,5 +30,19 @@ export class AutenticacionService {
                 console.log(error);
               }
             );
+  }
+
+  isAuthenticated() {
+    const user = firebase.auth().currentUser;
+
+    if (user) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
+  logout() {
+    firebase.auth().signOut();
   }
 }

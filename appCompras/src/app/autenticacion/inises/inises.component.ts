@@ -12,6 +12,7 @@ export class InisesComponent implements OnInit {
 
   loginForm: FormGroup;
   userData: any;
+  mensaje = false;
 
   constructor(private formBuilder: FormBuilder,
               private autenticacionService: AutenticacionService,
@@ -32,6 +33,11 @@ export class InisesComponent implements OnInit {
   onSubmit() {
     this.userData = this.saveUserData();
     this.autenticacionService.inicioSesion(this.userData);
+    setTimeout(() => {
+      if (this.isAuth() === false) {
+        this.mensaje = true;
+      }
+    }, 2000);
   }
 
   saveUserData() {
@@ -41,5 +47,9 @@ export class InisesComponent implements OnInit {
     };
 
     return saveUserData;
+  }
+
+  isAuth() {
+    return this.autenticacionService.isAuthenticated();
   }
 }

@@ -3,10 +3,15 @@
    routerLink="/addprovee">
    Añadir nuevo proveedor
 </a>
+<input type="search" 
+       class="form-control"
+       placeholder="Teclee un proveedor..."
+       [formControl]="campoBusqueda">
+
 <div *ngIf="cargando" class="text-center">
     <img src="../../../assets/spinner.gif" alt="cargando">
 </div>
-<div *ngIf="!cargando">
+<div *ngIf="resultados">
     <table class="table table-bordered table-striped" style="margin-top:40px;">
         <thead>
             <tr class="filters">
@@ -23,4 +28,7 @@
             </tr>
         </tbody>
     </table>
+</div>
+<div *ngIf="noResultados">
+    <p>No existe ninguna coincidencia</p>
 </div>

@@ -13,8 +13,13 @@
               formControlName="password">
         <hr>
         <button type="submit" class="btn btn-primary"
-                [disabled]="!loginForm.valid">
+                [disabled]="!loginForm.valid"
+                *ngIf="!autenticando">
           Inicie sesión
+        </button>
+        <button type="submit" class="btn btn-primary"
+                *ngIf="autenticando">
+          Autenticando usuario...
         </button>
       </form>
       <p>Si no dispone de cuenta <a routerLink="/registro">aquí</a> </p>

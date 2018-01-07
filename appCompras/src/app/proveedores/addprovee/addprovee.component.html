@@ -2,53 +2,47 @@
   <div class="col col-md"></div>
   <div class="col-10 col-md-8">
     <h2>Añadir nuevo proveedor</h2>
-    <form (ngSubmit)="onSubmit()" #formpro="ngForm">
+    <form [formGroup]="proveedorForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="nombre">Nombre</label>
         <input type="text"
                class="form-control"
                id="nombre"
-               ngModel
-               name="nombre">
+               formControlName="nombre">
       </div>
       <div class="form-group">
         <label for="cif">C.I.F</label>
         <input type="text"
                class="form-control"
                id="cif"
-               ngModel
-               name="cif">
+               formControlName="cif">
       </div>
       <div class="form-group">
         <label for="direccion">Direccion</label>
         <input type="text"
                class="form-control"
                id="direccion"
-               ngModel
-               name="direccion">
+               formControlName="direccion">
       </div>
       <div class="form-group">
         <label for="cp">Código Postal</label>
         <input type="text"
                class="form-control"
                id="cp"
-               ngModel
-               name="cp">
+               formControlName="cp">
       </div>
       <div class="form-group">
         <label for="localidad">Localidad</label>
         <input type="text"
                class="form-control"
                id="localidad"
-               ngModel
-               name="localidad">
+               formControlName="localidad">
       </div>
       <div class="form-group">
         <label for="provincia">Provincia</label>
         <select class="form-control"
                 id="provincia"
-                ngModel
-                name="provincia">
+                formControlName="provincia">
           <option value="">Seleccione la provincia</option>
           <option *ngFor="let provincia of provincias" [value]="provincia">
             {{ provincia }}
@@ -60,51 +54,31 @@
         <input type="number"
                class="form-control"
                id="telefono"
-               ngModel
-               name="telefono">
+               formControlName="telefono">
       </div>
       <div class="form-group">
         <label for="email">Correo Electrónico</label>
-        <i class="fa fa-check-circle check"
-           *ngIf="email.valid"></i>
-        <i class="fa fa-exclamation-circle uncheck"
-           *ngIf="email.invalid && email.touched"></i>
         <input type="email"
                class="form-control"
                id="email"
-               ngModel
-               name="email"
-               required
-               email
-               #email="ngModel">
-        <p class="alert alert-danger"
-           *ngIf="email.invalid && email.touched">Por favor introduzca una direccion de correo válida</p>
+               formControlName="email">
       </div>
       <div class="form-group">
         <label for="contacto">Persona de Contacto</label>
         <input type="text"
                class="form-control"
                id="contacto"
-               ngModel
-               name="contacto">
+               formControlName="contacto">
       </div>
       <button type="submit"
               class="btn btn-success"
-              [disabled]="!formpro.valid">
+              [disabled]="!proveedorForm.valid">
               Añadir Proveedor
       </button>
       <p class="alert alert-danger"
-         *ngIf="!formpro.valid">Por favor complete todos los campos obligatorios</p>
+         *ngIf="!proveedorForm.valid">Por favor complete todos los campos obligatorios</p>
     </form>
     <hr>
-    <pre>
-      {{ proveedor | json }}
-    </pre>
-    <h4>Estado dirty: {{ formpro.controls.email.dirty }}</h4>
-    <h4>Estado pristine: {{ formpro.controls.email.pristine }}</h4>
-    <h4>Estado touched: {{ formpro.controls.email.touched }}</h4>
-    <h4>Estado valid: {{ formpro.controls.email.valid }}</h4>
-    <h4>Estado invalid: {{ formpro.controls.email.invalid }}</h4>
   </div>
   <div class="col col-md"></div>
 </div>

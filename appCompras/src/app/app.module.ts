@@ -38,6 +38,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'inises', component: InisesComponent },
   { path: 'addfra', component: AddfraComponent },
+  { path: 'uploads', component: UploadComponent },
   { path: '**', component: InicioComponent }
 ];
 

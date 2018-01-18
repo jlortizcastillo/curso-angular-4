@@ -25,6 +25,8 @@ import { GuardService } from './servicios/guard.service';
 
 import { FacturasModule } from './facturas/facturas.module';
 import { AddfraComponent } from './facturas/facturas/addfra/addfra.component';
+import { UploadComponent } from './uploads/upload/upload.component';
+import { LoadfileService } from './servicios/loadfile.service';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -50,7 +52,8 @@ const routes: Routes = [
     PresupuestosComponent,
     EditpresComponent,
     RegistroComponent,
-    InisesComponent
+    InisesComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +70,8 @@ const routes: Routes = [
     ProveedoresService,
     PresupuestosService,
     AutenticacionService,
-    GuardService
+    GuardService,
+    LoadfileService
   ],
   bootstrap: [AppComponent]
 })

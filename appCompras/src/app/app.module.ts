@@ -27,6 +27,8 @@ import { FacturasModule } from './facturas/facturas.module';
 import { AddfraComponent } from './facturas/facturas/addfra/addfra.component';
 import { UploadComponent } from './uploads/upload/upload.component';
 import { LoadfileService } from './servicios/loadfile.service';
+import { ContratosComponent } from './uploads/contratos/contratos.component';
+import { DetallesComponent } from './uploads/detalles/detalles.component';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -39,6 +41,7 @@ const routes: Routes = [
   { path: 'inises', component: InisesComponent },
   { path: 'addfra', component: AddfraComponent },
   { path: 'uploads', component: UploadComponent },
+  { path: 'contratos', component: ContratosComponent },
   { path: '**', component: InicioComponent }
 ];
 
@@ -54,7 +57,9 @@ const routes: Routes = [
     EditpresComponent,
     RegistroComponent,
     InisesComponent,
-    UploadComponent
+    UploadComponent,
+    ContratosComponent,
+    DetallesComponent
   ],
   imports: [
     BrowserModule,
